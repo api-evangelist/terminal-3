@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: Terminal 3 DID V1 User V1 API
+  version: '1.0'
+  description: Terminal 3 (T3) REST API for decentralized identity, verifiable credentials, OpenID Connect, sub-client management, transactional email, and user data. Reconstructed from Terminal 3's own published SDK & API Reference (https://docs.terminal3.io/developers/adk/reference), which enumerates every path, method, and tag as verified against the provider's terminal-3-openapi.yml (21 paths, 24 operations, OpenAPI 3.0.3). Request/response body schemas are not reproduced here because the raw spec file is served only through the Mintlify viewer and returns 404 as a downloadable document; this capture is structural (paths, methods, operationIds, tags, security, server) and carries no fabricated field-level schemas. Verify field shapes against the live API Reference.
+  x-provenance:
+    method: generated
+    source: https://docs.terminal3.io/developers/adk/reference
+    note: Structural reconstruction from the provider-published operation table; raw terminal-3-openapi.yml (referenced in llms.txt) 404s as a file.
+    generated: '2026-07-21'
+servers:
+- url: https://staging.terminal3.io
+  description: Documented REST API server (per the published API Reference)
+security:
+- bearerAuth: []
+tags:
+- name: User V1
+  description: User creation and user data (social data, wallet addresses).
+paths:
+  /v1/user/create:
+    post:
+      operationId: createUser
+      summary: Create a user
+      description: Create a user. Requires the x-api-token header in addition to bearer auth.
+      tags:
+      - User V1
+      security:
+      - bearerAuth: []
+        apiKeyAuth: []
+      responses:
+        '200':
+          description: User created
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /v1/user/{user_id}/social_data:
+    parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: getUserSocialData
+      summary: Get a user's social data
+      tags:
+      - User V1
+      responses:
+        '200':
+          description: Success
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/user/{user_id}/wallet_addresses:
+    parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: getUserWalletAddresses
+      summary: Get a user's wallet addresses
+      tags:
+      - User V1
+      responses:
+        '200':
+          description: Success
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    Unauthorized:
+      description: Authentication is missing or invalid.
+    NotFound:
+      description: The requested resource was not found.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Bearer access token (default authentication for the T3 API).
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-token
+      description: API token required on specific endpoints (e.g. user creation). Contact enterprise@terminal3.io to obtain a key.

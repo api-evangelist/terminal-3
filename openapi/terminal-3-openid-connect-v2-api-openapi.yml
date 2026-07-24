@@ -1,0 +1,58 @@
+openapi: 3.0.3
+info:
+  title: Terminal 3 DID V1 OpenID Connect V2 API
+  version: '1.0'
+  description: Terminal 3 (T3) REST API for decentralized identity, verifiable credentials, OpenID Connect, sub-client management, transactional email, and user data. Reconstructed from Terminal 3's own published SDK & API Reference (https://docs.terminal3.io/developers/adk/reference), which enumerates every path, method, and tag as verified against the provider's terminal-3-openapi.yml (21 paths, 24 operations, OpenAPI 3.0.3). Request/response body schemas are not reproduced here because the raw spec file is served only through the Mintlify viewer and returns 404 as a downloadable document; this capture is structural (paths, methods, operationIds, tags, security, server) and carries no fabricated field-level schemas. Verify field shapes against the live API Reference.
+  x-provenance:
+    method: generated
+    source: https://docs.terminal3.io/developers/adk/reference
+    note: Structural reconstruction from the provider-published operation table; raw terminal-3-openapi.yml (referenced in llms.txt) 404s as a file.
+    generated: '2026-07-21'
+servers:
+- url: https://staging.terminal3.io
+  description: Documented REST API server (per the published API Reference)
+security:
+- bearerAuth: []
+tags:
+- name: OpenID Connect V2
+  description: OpenID Connect token and userinfo operations (v2).
+paths:
+  /v2/openidc/token:
+    post:
+      operationId: createOpenidcTokenV2
+      summary: OpenID Connect token endpoint (v2)
+      tags:
+      - OpenID Connect V2
+      responses:
+        '200':
+          description: Token issued
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /v2/openidc/user:
+    get:
+      operationId: getOpenidcUserV2
+      summary: OpenID Connect userinfo endpoint (v2)
+      tags:
+      - OpenID Connect V2
+      responses:
+        '200':
+          description: Success
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  responses:
+    BadRequest:
+      description: The request was malformed.
+    Unauthorized:
+      description: Authentication is missing or invalid.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Bearer access token (default authentication for the T3 API).
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-token
+      description: API token required on specific endpoints (e.g. user creation). Contact enterprise@terminal3.io to obtain a key.
