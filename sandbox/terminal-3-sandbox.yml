@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.terminal3.io/developers/adk/get-started/prerequisites/request-test-tokens
+note: >-
+  Terminal 3 provides a self-serve test environment. Developers claim an account,
+  API key, and test credits in one step (no approval). The SDK selects the cluster
+  with setEnvironment("testnet"|"production"). The documented REST API server is a
+  staging host. No published magic test values (test cards/identifiers) exist for
+  this identity API; none are invented here.
+environments:
+  - name: testnet
+    selector: setEnvironment("testnet")
+    description: Test T3N cluster. Selected explicitly in the SDK (defaults to production otherwise).
+  - name: production
+    selector: setEnvironment("production")
+    description: Production T3N cluster (SDK default).
+rest_server: https://staging.terminal3.io
+test_credentials:
+  self_serve: true
+  claim_page: https://docs.terminal3.io/developers/adk/get-started/prerequisites/request-test-tokens
+  description: Claim an account, API key, and test credits in one self-serve step (no approval wait).
+  env_var: T3N_API_KEY
+reference_contract:
+  repo: https://github.com/Terminal-3/z-tenant-flight
+  description: Example tenant TEE contract (Duffel flight booking with PII privacy) to fork for testing.

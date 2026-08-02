@@ -1,0 +1,25 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Terminal 3
+  version: 1.0.0
+extends: openapi/terminal-3-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: '2026-07-21'
+      x-apievangelist-provenance: >-
+        Structural OpenAPI reconstructed from Terminal 3's published SDK & API
+        Reference (docs.terminal3.io/developers/adk/reference). Body schemas not
+        reproduced; verify against the live reference.
+      x-apievangelist-categories:
+        - Identity
+        - Verifiable Credentials
+        - Decentralized Identity
+        - OpenID Connect
+        - KYC / AML
+  - target: $.info
+    update:
+      x-authentication: authentication/terminal-3-authentication.yml
+      x-conventions: conventions/terminal-3-conventions.yml
+      x-error-catalog: errors/terminal-3-problem-types.yml
+      x-data-model: data-model/terminal-3-data-model.yml

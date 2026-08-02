@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/terminal-3-openapi.yml
+note: >-
+  Cross-cutting standards conformance derived from the Terminal 3 API surface,
+  product documentation, and the @terminal3 credential SDK family. "conforms"
+  reflects evidence of support in the published surface, not a certification.
+standards:
+  - id: oauth2-bearer
+    conforms: true
+    evidence: REST API default auth is a bearer JWT (RFC 6750 style).
+  - id: oidc
+    conforms: true
+    evidence: /v1/openidc and /v2/openidc authorize, token, and userinfo endpoints.
+  - id: w3c-did
+    conforms: true
+    evidence: /v1/did and /v1/did/register; did:t3n method; DID toolkit SDKs.
+  - id: w3c-verifiable-credentials
+    conforms: true
+    evidence: /v1/vc/issuer/* endpoints; vc_core/ecdsa_vc/bbs_vc SDKs.
+  - id: sd-jwt-vc
+    conforms: true
+    evidence: "@terminal3/sd_jwt_vc issues SD-JWT VCs (RS256 + SHA-256)."
+  - id: iso-18013-5-mdoc
+    conforms: true
+    evidence: "@terminal3/mdoc_vc issues mDoc credentials."
+  - id: bbs-plus-selective-disclosure
+    conforms: true
+    evidence: "@terminal3/bbs_vc BBS+ selective-disclosure credentials."
+  - id: eip-4361-siwe
+    conforms: true
+    evidence: SDK authenticate() flow uses Sign-In With Ethereum to derive a tenant DID.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No application/problem+json error envelope documented.
+  - id: kyc-aml
+    conforms: true
+    evidence: T3 Verify provides KYC/AML identity and liveness verification (product docs).
+  - id: soc2
+    conforms: true
+    evidence: SOC 2 (Type 1) named on terminal3.io/security; Vanta trust center at trust.terminal3.io.
+  - id: iso-27001
+    conforms: true
+    evidence: ISO 27001 named on terminal3.io/security.
+  - id: gdpr
+    conforms: true
+    evidence: GDPR/PDPA/APPI data-residency compliance stated on terminal3.io/security.
+  - id: fips-203-ml-kem
+    conforms: true
+    evidence: Post-quantum key encapsulation via ML-KEM (FIPS 203) per terminal3.io/security.

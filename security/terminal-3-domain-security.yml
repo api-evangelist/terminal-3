@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: terminal3.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  2 06:36:07 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+- host: staging.terminal3.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  8 05:38:06 2026 GMT
+  hsts: false
+domains:
+- domain: terminal3.io
+  dnssec: false
+  caa:
+  - 0 issue "letsencrypt.org"
+  - 0 issue "pki.goog"
+  - 0 issue "sectigo.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: none

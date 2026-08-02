@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.terminal3.io/developers/adk/reference
+note: >-
+  Cross-cutting request/response semantics for the Terminal 3 REST API, derived
+  from the published API Reference and OpenAPI surface. Fields left null are not
+  documented by the provider and were not inferred (no fabrication). Idempotency,
+  pagination, and a formal error envelope are NOT documented for the REST API and
+  are intentionally omitted rather than guessed.
+authentication:
+  style: bearer-jwt
+  header: Authorization
+  secondary: x-api-token (header, specific endpoints)
+  ref: authentication/terminal-3-authentication.yml
+versioning:
+  scheme: uri-path
+  versions_present: [v1, v2]
+  detail: OpenID Connect exposes both /v1/openidc and /v2/openidc; other resources are v1.
+idempotency:
+  supported: null
+  note: No idempotency-key header/parameter is documented for the REST API.
+pagination:
+  style: null
+  note: No pagination parameters are documented for the listed endpoints.
+error_envelope:
+  shape: null
+  note: >-
+    REST error shape not published in machine-readable form. ADK/host-layer
+    surfaces plain HTTP status codes (e.g. generic 500) plus named conditions
+    such as AccessDenied, tenant not found, and host/http.egress_denied.
+  ref: errors/terminal-3-problem-types.yml
+request_tracing:
+  request_id_header: null
+rate_limiting:
+  signaling: null
+sdk_semantics:
+  environments: [testnet, production]
+  note: setEnvironment("testnet"|"production") selects the T3N cluster; SDK defaults to production.
+  did_model: Authenticated sessions return a tenant DID (did:t3n:...) to reuse across calls.

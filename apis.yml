@@ -1,25 +1,207 @@
 aid: terminal-3
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/terminal-3.png
 name: Terminal 3
-description: Terminal 3 is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Terminal 3 (T3) is a data-freedom and decentralized-identity company (founded 2023,
+  Hong Kong) building privacy-preserving identity, verifiable credentials, and confidential
+  computing infrastructure. Its products include T3 Verify (enterprise KYC/AML with real-time
+  identity and liveness verification across 190+ countries and reusable verifiable
+  credentials), T3 Identity (full-stack digital identity with passwordless auth, OpenID
+  Connect SSO, decentralized identifiers, and verifiable credentials), Agent Command (secure,
+  cryptographically verifiable AI-agent identity, permissions, and audit), and the T3 Network
+  (T3N) — a hardware-secured confidential-computing network running tenant TEE contracts inside
+  Intel TDX enclaves. Terminal 3 publishes a REST API (DID, OpenID Connect, verifiable
+  credentials, sub-clients, transactional email, and user data) and an Agent Developer Kit
+  (ADK) with a first-party TypeScript SDK family. Backed by 500 Global, ConsenSys Mesh, CMCC
+  Global, Bixin Ventures, and Cherubic Ventures.
 url: https://raw.githubusercontent.com/api-evangelist/terminal-3/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Identity
+- Decentralized Identity
+- Verifiable Credentials
+- OpenID Connect
+- KYC
+- AML
+- Confidential Computing
+- AI Agents
+- Privacy
+- Web3
+- DID
+apis:
+- aid: terminal-3:terminal-3-did-v1-api
+  name: Terminal 3 DID V1 API
+  description: Decentralized identifier (DID) operations.
+  humanURL: https://docs.terminal3.io/developers/adk/reference
+  baseURL: https://staging.terminal3.io
+  tags:
+  - DID V1
+  properties:
+  - type: OpenAPI
+    url: openapi/terminal-3-did-v1-api-openapi.yml
+  - type: APIReference
+    url: https://docs.terminal3.io/api-reference/t3-api/getting-started
+- aid: terminal-3:terminal-3-openid-connect-v1-api
+  name: Terminal 3 OpenID Connect V1 API
+  description: OpenID Connect authorization, token, userinfo, and credential operations (v1).
+  humanURL: https://docs.terminal3.io/developers/adk/reference
+  baseURL: https://staging.terminal3.io
+  tags:
+  - OpenID Connect V1
+  properties:
+  - type: OpenAPI
+    url: openapi/terminal-3-openid-connect-v1-api-openapi.yml
+  - type: APIReference
+    url: https://docs.terminal3.io/api-reference/t3-api/getting-started
+- aid: terminal-3:terminal-3-openid-connect-v2-api
+  name: Terminal 3 OpenID Connect V2 API
+  description: OpenID Connect token and userinfo operations (v2).
+  humanURL: https://docs.terminal3.io/developers/adk/reference
+  baseURL: https://staging.terminal3.io
+  tags:
+  - OpenID Connect V2
+  properties:
+  - type: OpenAPI
+    url: openapi/terminal-3-openid-connect-v2-api-openapi.yml
+  - type: APIReference
+    url: https://docs.terminal3.io/api-reference/t3-api/getting-started
+- aid: terminal-3:terminal-3-sub-client-v1-api
+  name: Terminal 3 Sub Client V1 API
+  description: Manage sub-clients under a Terminal 3 tenant.
+  humanURL: https://docs.terminal3.io/developers/adk/reference
+  baseURL: https://staging.terminal3.io
+  tags:
+  - Sub Client V1
+  properties:
+  - type: OpenAPI
+    url: openapi/terminal-3-sub-client-v1-api-openapi.yml
+  - type: APIReference
+    url: https://docs.terminal3.io/api-reference/t3-api/getting-started
+- aid: terminal-3:terminal-3-transactional-email-template-v1-api
+  name: Terminal 3 Transactional Email Template V1 API
+  description: Create, update, and send transactional email templates.
+  humanURL: https://docs.terminal3.io/developers/adk/reference
+  baseURL: https://staging.terminal3.io
+  tags:
+  - Transactional Email Template V1
+  properties:
+  - type: OpenAPI
+    url: openapi/terminal-3-transactional-email-template-v1-api-openapi.yml
+  - type: APIReference
+    url: https://docs.terminal3.io/api-reference/t3-api/getting-started
+- aid: terminal-3:terminal-3-user-v1-api
+  name: Terminal 3 User V1 API
+  description: User creation and user data (social data, wallet addresses).
+  humanURL: https://docs.terminal3.io/developers/adk/reference
+  baseURL: https://staging.terminal3.io
+  tags:
+  - User V1
+  properties:
+  - type: OpenAPI
+    url: openapi/terminal-3-user-v1-api-openapi.yml
+  - type: APIReference
+    url: https://docs.terminal3.io/api-reference/t3-api/getting-started
+- aid: terminal-3:terminal-3-vc-v1-api
+  name: Terminal 3 VC V1 API
+  description: Verifiable Credential issuer operations.
+  humanURL: https://docs.terminal3.io/developers/adk/reference
+  baseURL: https://staging.terminal3.io
+  tags:
+  - VC V1
+  properties:
+  - type: OpenAPI
+    url: openapi/terminal-3-vc-v1-api-openapi.yml
+  - type: APIReference
+    url: https://docs.terminal3.io/api-reference/t3-api/getting-started
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: AgenticAccess
+  url: agentic-access/terminal-3-agentic-access.yml
+- type: TrustCenter
+  url: security/terminal-3-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/terminal-3-vulnerability-disclosure.yml
+- type: Security
+  url: https://terminal3.io/security
+- type: Compliance
+  url: https://terminal3.io/security
+- type: DomainSecurity
+  url: security/terminal-3-domain-security.yml
+- type: Authentication
+  url: authentication/terminal-3-authentication.yml
+- type: Packages
+  url: packages/terminal-3-packages.yml
+- type: SDKs
+  url: packages/terminal-3-packages.yml
+- type: MCPServer
+  url: mcp/terminal-3-mcp.yml
+- type: LLMsTxt
+  url: llms/terminal-3-llms.txt
+- type: Conformance
+  url: conformance/terminal-3-conformance.yml
+- type: ErrorCatalog
+  url: errors/terminal-3-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/terminal-3-lifecycle.yml
+- type: StatusPage
+  url: https://status.terminal3.io
+- type: Conventions
+  url: conventions/terminal-3-conventions.yml
+- type: ChangeLog
+  url: changelog/terminal-3-changelog.yml
+- type: Sandbox
+  url: sandbox/terminal-3-sandbox.yml
+- type: DataModel
+  url: data-model/terminal-3-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DeveloperPortal
+  url: https://docs.terminal3.io
+- type: Documentation
+  url: https://docs.terminal3.io
+- type: GettingStarted
+  url: https://docs.terminal3.io/developers/adk/get-started/quickstart
+- type: Support
+  url: https://t.me/terminal3developer
+- type: Blog
+  url: https://blog.terminal3.io
+- type: GitHubOrganization
+  url: https://github.com/Terminal-3
+- type: SignUp
+  url: https://docs.terminal3.io/developers/adk/get-started/prerequisites/request-test-tokens
+- type: TermsOfService
+  url: https://terminal3.io/terms-of-service
+- type: PrivacyPolicy
+  url: https://terminal3.io/privacy-policy
 - type: Website
   url: https://terminal3.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 23
+  pass: local-v1

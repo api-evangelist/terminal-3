@@ -1,0 +1,79 @@
+generated: '2026-07-21'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=@terminal3
+note: >-
+  First-party @terminal3 npm scope. t3n-sdk is the primary ADK client SDK
+  (latest 4.18.0, MIT). The remaining packages are the DID/VC credential
+  toolkit and messaging/crypto helpers. GitHub org: https://github.com/Terminal-3
+packages:
+  - language: javascript
+    registry: npm
+    name: "@terminal3/t3n-sdk"
+    url: https://www.npmjs.com/package/@terminal3/t3n-sdk
+    install: npm install @terminal3/t3n-sdk
+    description: T3n TypeScript SDK — minimal client mirroring the server's RPC handler approach (auth, encrypted session, execute transport).
+    license: MIT
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@terminal3/vc_core"
+    url: https://www.npmjs.com/package/@terminal3/vc_core
+    install: npm install @terminal3/vc_core
+    description: Manage Decentralized Identifiers (DIDs) and Verifiable Credentials (VCs).
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@terminal3/ecdsa_vc"
+    url: https://www.npmjs.com/package/@terminal3/ecdsa_vc
+    install: npm install @terminal3/ecdsa_vc
+    description: DID/VC toolkit — create and verify ECDSA-signed credentials.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@terminal3/bbs_vc"
+    url: https://www.npmjs.com/package/@terminal3/bbs_vc
+    install: npm install @terminal3/bbs_vc
+    description: DID/VC toolkit — create and verify BBS+ credentials (selective disclosure).
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@terminal3/sd_jwt_vc"
+    url: https://www.npmjs.com/package/@terminal3/sd_jwt_vc
+    install: npm install @terminal3/sd_jwt_vc
+    description: Issue SD-JWT VCs (RS256 signing, SHA-256 hashing).
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@terminal3/mdoc_vc"
+    url: https://www.npmjs.com/package/@terminal3/mdoc_vc
+    install: npm install @terminal3/mdoc_vc
+    description: Issue mDoc (ISO 18013-5) VCs (RS256 signing, SHA-256 hashing).
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@terminal3/revoke_vc"
+    url: https://www.npmjs.com/package/@terminal3/revoke_vc
+    install: npm install @terminal3/revoke_vc
+    description: DID/VC toolkit — revoke credentials.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@terminal3/verify_vp"
+    url: https://www.npmjs.com/package/@terminal3/verify_vp
+    install: npm install @terminal3/verify_vp
+    description: Verify Verifiable Presentations (VPs).
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@terminal3/messaging_client"
+    url: https://www.npmjs.com/package/@terminal3/messaging_client
+    install: npm install @terminal3/messaging_client
+    description: Encrypt/decrypt messages using MetaMask (ECIES over ed25519 + symmetric encryption).
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@terminal3/hedera-t3n-plugin"
+    url: https://www.npmjs.com/package/@terminal3/hedera-t3n-plugin
+    install: npm install @terminal3/hedera-t3n-plugin
+    description: Hedera Agent Kit JS plugin providing T3N identity verification, authentication, and selective disclosure for AI-driven apps.
+    official: true

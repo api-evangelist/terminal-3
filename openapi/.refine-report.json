@@ -1,0 +1,26 @@
+{
+  "provider": "terminal-3",
+  "sources": [
+    "terminal-3-did-v1-api-openapi.yml",
+    "terminal-3-openid-connect-v1-api-openapi.yml",
+    "terminal-3-openid-connect-v2-api-openapi.yml",
+    "terminal-3-sub-client-v1-api-openapi.yml",
+    "terminal-3-transactional-email-template-v1-api-openapi.yml",
+    "terminal-3-user-v1-api-openapi.yml",
+    "terminal-3-vc-v1-api-openapi.yml"
+  ],
+  "outputs": [
+    "terminal-3-did-v1-api-openapi.yml",
+    "terminal-3-openid-connect-v1-api-openapi.yml",
+    "terminal-3-openid-connect-v2-api-openapi.yml",
+    "terminal-3-sub-client-v1-api-openapi.yml",
+    "terminal-3-transactional-email-template-v1-api-openapi.yml",
+    "terminal-3-user-v1-api-openapi.yml",
+    "terminal-3-vc-v1-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

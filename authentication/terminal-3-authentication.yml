@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.terminal3.io/developers/adk/reference
+docs: https://docs.terminal3.io/api-reference/t3-api/getting-started
+note: >-
+  Terminal 3 REST API authenticates with a bearer JWT by default; specific
+  endpoints (e.g. user creation) additionally require an x-api-token header.
+  Request an API key from enterprise@terminal3.io or the self-serve claim page.
+  The ADK SDK layer authenticates separately via SIWE (Sign-In With Ethereum,
+  EIP-4361) to obtain a tenant DID.
+summary:
+  types: [http, apiKey]
+  api_key_in: [header]
+  http_schemes: [bearer]
+schemes:
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    bearerFormat: JWT
+    description: "Default authentication for the T3 REST API (Authorization: Bearer <token>)."
+    sources: [openapi/terminal-3-openapi.yml]
+  - name: apiKeyAuth
+    type: apiKey
+    in: header
+    parameter_name: x-api-token
+    description: Required on specific endpoints such as user creation. Obtain via enterprise@terminal3.io.
+    sources: [openapi/terminal-3-openapi.yml]
+sdk_auth:
+  - method: SIWE
+    standard: EIP-4361 (Sign-In With Ethereum)
+    description: >-
+      The @terminal3/t3n-sdk handshake/authenticate flow signs a login challenge
+      (metamask_sign) to derive an authenticated tenant DID (did:t3n:...).
+    source: https://docs.terminal3.io/developers/adk/get-started/quickstart

@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+host: https://terminal3.io
+note: >-
+  Probed the /.well-known/ discovery surface on terminal3.io and the id.terminal3.io
+  identity host. No genuine discovery documents are published: terminal3.io returns
+  404 for all probed paths, and id.terminal3.io is a single-page app that returns
+  HTTP 200 (identical HTML) for every path including nonexistent ones — i.e. no real
+  OIDC discovery document at a well-known path. No raw files saved; no WellKnown/
+  APICatalog pointer emitted (nothing real to point at).
+documents:
+  - path: /.well-known/security.txt
+    host: terminal3.io
+    status: 404
+  - path: /.well-known/openid-configuration
+    host: terminal3.io
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    host: terminal3.io
+    status: 404
+  - path: /.well-known/api-catalog
+    host: terminal3.io
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    host: terminal3.io
+    status: 404
+  - path: /.well-known/openid-configuration
+    host: id.terminal3.io
+    status: 200
+    valid: false
+    reason: SPA returns identical HTML 200 for every path (including nonexistent); not a real OIDC discovery document.
+  - path: /.well-known/oauth-authorization-server
+    host: id.terminal3.io
+    status: 200
+    valid: false
+    reason: SPA returns identical HTML 200 for every path; not a real document.

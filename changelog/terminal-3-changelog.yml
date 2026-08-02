@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.terminal3.io/developers/adk/changelog
+note: >-
+  Terminal 3 publishes a dated documentation changelog. As of capture the page
+  tracks documentation changes only; a confirmed, complete SDK release history is
+  not yet published (the provider explicitly declines to list unverified SDK
+  per-version changes). Hackathon integrations have referenced @terminal3/t3n-sdk
+  versions 3.5.2, 3.9.0, and 3.11.0; the npm dist-tag latest is 4.18.0.
+scheme: date
+current_sdk_version: 4.18.0
+entries:
+  - date: '2026-07-06'
+    area: documentation
+    breaking: false
+    highlights:
+      - Added the Quickstart page (authenticated call before contract code).
+      - Filled in the ADK Tour and Agent Auth pages.
+      - Added the Changelog and the SDK & API Reference pages.
+      - Fixed a duplicate "Step 4" between the Invoke and Test walkthrough pages.
+      - Expanded Common Errors with generic-HTTP-500 triage and an integration-gotchas table.
+      - Added a warning about contract version-shadowing on re-registration.

@@ -1,0 +1,54 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/terminal-3-openapi.yml
+note: >-
+  Entity-relationship graph derived from the Terminal 3 REST API paths and
+  id-reference fields. Relationships are inferred from path structure
+  (e.g. /v1/user/{user_id}/wallet_addresses); field-level schemas were not
+  available and are not fabricated.
+entities:
+  - name: DID
+    description: Decentralized identifier (did:t3n method) for a human or agent.
+    operations: [getDid, registerDid]
+  - name: User
+    description: A Terminal 3 user with associated wallet and social data.
+    operations: [createUser, getUserSocialData, getUserWalletAddresses]
+  - name: WalletAddress
+    description: Blockchain wallet address belonging to a user.
+    operations: [getUserWalletAddresses]
+  - name: SocialData
+    description: A user's social data / social connections.
+    operations: [getUserSocialData, getOpenidcUserSocialConnections]
+  - name: VerifiableCredential
+    description: W3C Verifiable Credential managed by the issuer.
+    operations: [getIssuerCredentials, createIssuerCredentialsProof, storeIssuerCredential]
+  - name: SubClient
+    description: A sub-client under a Terminal 3 tenant.
+    operations: [listSubClients, getSubClient, createSubClient, updateSubClient, deleteSubClient]
+  - name: TransactionalEmailTemplate
+    description: A reusable transactional email template.
+    operations: [createTransactionalEmailTemplate, sendTransactionalEmail, updateTransactionalEmailTemplate]
+  - name: OpenIDConnectSession
+    description: OIDC authorization/token/userinfo session.
+    operations: [openidcAuthorize, createOpenidcToken, getOpenidcUser, createOpenidcTokenV2, getOpenidcUserV2]
+relationships:
+  - from: User
+    to: WalletAddress
+    type: has_many
+    via: user_id
+  - from: User
+    to: SocialData
+    type: has_one
+    via: user_id
+  - from: User
+    to: DID
+    type: has_one
+    via: did
+  - from: VerifiableCredential
+    to: DID
+    type: belongs_to
+    via: issuer
+  - from: SubClient
+    to: DID
+    type: belongs_to
+    via: subclient_id

@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/terminal-3-openapi.yml
+docs: https://docs.terminal3.io/developers/adk/tips/common-errors
+format: http-status
+note: >-
+  Terminal 3 does not publish a machine-readable RFC 9457 error envelope for the
+  REST API. This catalog captures the HTTP status conditions present on the API
+  surface plus the named error conditions the ADK "Common errors" reference
+  documents. Titles/remediation for the named ADK conditions are quoted from the
+  provider's common-errors guidance.
+problems:
+  - status: 400
+    title: Bad Request
+    detail: Malformed request (e.g. to the OpenID Connect token endpoint).
+  - status: 401
+    title: Unauthorized
+    detail: Missing or invalid bearer token, or missing x-api-token where required.
+  - status: 404
+    title: Not Found
+    detail: Referenced resource (sub-client, user, template) does not exist.
+  - status: 500
+    title: Internal Server Error
+    detail: >-
+      Generic HTTP 500 with no detail. Per the ADK common-errors guidance this can
+      mean outbound egress was not authorized, a wrong action name, or a real
+      platform issue — not necessarily a client bug.
+named_conditions:
+  - code: AccessDenied
+    cause: KV map ACLs default to deny.
+    action: Explicitly set readers/writers when creating the map.
+  - code: tenant not found
+    cause: The DID was derived/hardcoded instead of read from the authenticated session.
+    action: Always read tenantDid/did.value from the session; never construct it.
+  - code: host/http.egress_denied
+    cause: The agent is authenticated but no user has authorized it yet.
+    action: The data owner must sign an agent-auth-update grant naming the agent's DID.

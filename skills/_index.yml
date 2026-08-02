@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: generated
+skills:
+  - file: terminal-3-t3n-adk-quickstart.md
+    name: t3n-adk-quickstart
+    method: searched
+    source: https://docs.terminal3.io/developers/adk/support/ai-coding-assistants
+    note: Provider-published Agent Skill, saved verbatim.
+  - file: terminal-3-issue-verifiable-credential.md
+    name: Issue and store a verifiable credential
+    api: openapi/terminal-3-openapi.yml
+    operations: [createIssuerCredentialsProof, storeIssuerCredential, getIssuerCredentials]
+  - file: terminal-3-onboard-user-and-read-identity.md
+    name: Onboard a user and read their identity data
+    api: openapi/terminal-3-openapi.yml
+    operations: [createUser, getUserWalletAddresses, getUserSocialData]
+  - file: terminal-3-openid-connect-login.md
+    name: Authenticate a user with OpenID Connect
+    api: openapi/terminal-3-openapi.yml
+    operations: [openidcAuthorize, createOpenidcToken, getOpenidcUser, getOpenidcUserSocialConnections]

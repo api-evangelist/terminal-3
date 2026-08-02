@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.terminal3.io/developers/adk/reference
+note: >-
+  Versioning is by URI path (v1/v2 both present for OpenID Connect). Terminal 3
+  operates a public status page. No formal deprecation/sunset policy or published
+  SLA/uptime target was found; those fields are left null rather than fabricated.
+versioning:
+  scheme: uri-path
+  current: v2
+  versions: [v1, v2]
+  docs: https://docs.terminal3.io/developers/adk/reference
+deprecation:
+  policy_url: null
+  sunset_header: null
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.terminal3.io
+deprecated_operations: []
