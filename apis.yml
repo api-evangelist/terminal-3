@@ -140,6 +140,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/terminal-3-openapi-overlay.yaml
 - type: AgenticAccess
   url: agentic-access/terminal-3-agentic-access.yml
 - type: TrustCenter
