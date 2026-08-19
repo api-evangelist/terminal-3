@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Terminal 3 DID V1 API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DID V1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get DID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://staging.terminal3.io/v1/did"
+          },
+          "docs": "Get DID"
+        },
+        {
+          "info": {
+            "name": "Register a DID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://staging.terminal3.io/v1/did/register"
+          },
+          "docs": "Register a DID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

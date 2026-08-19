@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Terminal 3 DID V1 Sub Client V1 API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sub Client V1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List sub-clients",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://staging.terminal3.io/v1/sub_client"
+          },
+          "docs": "List sub-clients"
+        },
+        {
+          "info": {
+            "name": "Create a sub-client",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://staging.terminal3.io/v1/sub_client"
+          },
+          "docs": "Create a sub-client"
+        },
+        {
+          "info": {
+            "name": "Get a sub-client",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://staging.terminal3.io/v1/sub_client/:subclient_id",
+            "params": [
+              {
+                "name": "subclient_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a sub-client"
+        },
+        {
+          "info": {
+            "name": "Update a sub-client",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://staging.terminal3.io/v1/sub_client/:subclient_id",
+            "params": [
+              {
+                "name": "subclient_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a sub-client"
+        },
+        {
+          "info": {
+            "name": "Delete a sub-client",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://staging.terminal3.io/v1/sub_client/:subclient_id",
+            "params": [
+              {
+                "name": "subclient_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a sub-client"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Terminal 3 DID V1 User V1 API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User V1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://staging.terminal3.io/v1/user/create",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a user. Requires the x-api-token header in addition to bearer auth."
+        },
+        {
+          "info": {
+            "name": "Get a user's social data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://staging.terminal3.io/v1/user/:user_id/social_data",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a user's social data"
+        },
+        {
+          "info": {
+            "name": "Get a user's wallet addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://staging.terminal3.io/v1/user/:user_id/wallet_addresses",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a user's wallet addresses"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

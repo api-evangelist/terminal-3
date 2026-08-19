@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Terminal 3 DID V1 OpenID Connect V1 API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OpenID Connect V1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "OpenID Connect authorization endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://staging.terminal3.io/v1/openidc/authorize"
+          },
+          "docs": "OpenID Connect authorization endpoint"
+        },
+        {
+          "info": {
+            "name": "Get OpenID Connect credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://staging.terminal3.io/v1/openidc/credentials"
+          },
+          "docs": "Get OpenID Connect credentials"
+        },
+        {
+          "info": {
+            "name": "Create a proof for OpenID Connect credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://staging.terminal3.io/v1/openidc/credentials/proof"
+          },
+          "docs": "Create a proof for OpenID Connect credentials"
+        },
+        {
+          "info": {
+            "name": "OpenID Connect token endpoint (v1)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://staging.terminal3.io/v1/openidc/token"
+          },
+          "docs": "OpenID Connect token endpoint (v1)"
+        },
+        {
+          "info": {
+            "name": "OpenID Connect userinfo endpoint (v1)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://staging.terminal3.io/v1/openidc/user"
+          },
+          "docs": "OpenID Connect userinfo endpoint (v1)"
+        },
+        {
+          "info": {
+            "name": "Get a user's social connections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://staging.terminal3.io/v1/openidc/user/social_connections"
+          },
+          "docs": "Get a user's social connections"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

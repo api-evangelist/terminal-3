@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Terminal 3 DID V1 VC V1 API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "VC V1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get issuer credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://staging.terminal3.io/v1/vc/issuer/credentials"
+          },
+          "docs": "Get issuer credentials"
+        },
+        {
+          "info": {
+            "name": "Create a proof for issuer credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://staging.terminal3.io/v1/vc/issuer/credentials/proof"
+          },
+          "docs": "Create a proof for issuer credentials"
+        },
+        {
+          "info": {
+            "name": "Store an issued verifiable credential",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://staging.terminal3.io/v1/vc/issuer/store"
+          },
+          "docs": "Store an issued verifiable credential"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

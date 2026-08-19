@@ -2,84 +2,88 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: openapi/terminal-3-openapi.yml
-note: >-
-  No official hosted/remote Terminal 3 MCP server was found (the published
-  @terminal3/hedera-t3n-plugin is a Hedera Agent Kit plugin, not an MCP server).
-  This is a DERIVED candidate tool list — one tool per REST operation — to seed a
-  future MCP server. Not an official Terminal 3 product.
+note: No official hosted/remote Terminal 3 MCP server was found (the published @terminal3/hedera-t3n-plugin
+  is a Hedera Agent Kit plugin, not an MCP server). This is a DERIVED candidate tool list — one tool per
+  REST operation — to seed a future MCP server. Not an official Terminal 3 product.
 server:
   name: terminal-3
   transport: http
 tools:
-  - name: get_did
-    description: Get DID
-    source_operation: openapi/terminal-3-openapi.yml#getDid
-  - name: register_did
-    description: Register a DID
-    source_operation: openapi/terminal-3-openapi.yml#registerDid
-  - name: openidc_authorize
-    description: OpenID Connect authorization endpoint
-    source_operation: openapi/terminal-3-openapi.yml#openidcAuthorize
-  - name: get_openidc_credentials
-    description: Get OpenID Connect credentials
-    source_operation: openapi/terminal-3-openapi.yml#getOpenidcCredentials
-  - name: create_openidc_credentials_proof
-    description: Create a proof for OpenID Connect credentials
-    source_operation: openapi/terminal-3-openapi.yml#createOpenidcCredentialsProof
-  - name: create_openidc_token
-    description: OpenID Connect token endpoint (v1)
-    source_operation: openapi/terminal-3-openapi.yml#createOpenidcToken
-  - name: get_openidc_user
-    description: OpenID Connect userinfo endpoint (v1)
-    source_operation: openapi/terminal-3-openapi.yml#getOpenidcUser
-  - name: get_openidc_user_social_connections
-    description: Get a user's social connections
-    source_operation: openapi/terminal-3-openapi.yml#getOpenidcUserSocialConnections
-  - name: create_openidc_token_v2
-    description: OpenID Connect token endpoint (v2)
-    source_operation: openapi/terminal-3-openapi.yml#createOpenidcTokenV2
-  - name: get_openidc_user_v2
-    description: OpenID Connect userinfo endpoint (v2)
-    source_operation: openapi/terminal-3-openapi.yml#getOpenidcUserV2
-  - name: list_sub_clients
-    description: List sub-clients
-    source_operation: openapi/terminal-3-openapi.yml#listSubClients
-  - name: get_sub_client
-    description: Get a sub-client
-    source_operation: openapi/terminal-3-openapi.yml#getSubClient
-  - name: create_sub_client
-    description: Create a sub-client
-    source_operation: openapi/terminal-3-openapi.yml#createSubClient
-  - name: update_sub_client
-    description: Update a sub-client
-    source_operation: openapi/terminal-3-openapi.yml#updateSubClient
-  - name: delete_sub_client
-    description: Delete a sub-client
-    source_operation: openapi/terminal-3-openapi.yml#deleteSubClient
-  - name: create_transactional_email_template
-    description: Create a transactional email template
-    source_operation: openapi/terminal-3-openapi.yml#createTransactionalEmailTemplate
-  - name: send_transactional_email
-    description: Send a transactional email
-    source_operation: openapi/terminal-3-openapi.yml#sendTransactionalEmail
-  - name: update_transactional_email_template
-    description: Update a transactional email template
-    source_operation: openapi/terminal-3-openapi.yml#updateTransactionalEmailTemplate
-  - name: create_user
-    description: Create a user (requires x-api-token)
-    source_operation: openapi/terminal-3-openapi.yml#createUser
-  - name: get_user_social_data
-    description: Get a user's social data
-    source_operation: openapi/terminal-3-openapi.yml#getUserSocialData
-  - name: get_user_wallet_addresses
-    description: Get a user's wallet addresses
-    source_operation: openapi/terminal-3-openapi.yml#getUserWalletAddresses
-  - name: get_issuer_credentials
-    description: Get issuer credentials
-    source_operation: openapi/terminal-3-openapi.yml#getIssuerCredentials
-  - name: create_issuer_credentials_proof
-    description: Create a proof for issuer credentials
-    source_operation: openapi/terminal-3-openapi.yml#createIssuerCredentialsProof
-  - name: store_issuer_credential
-    description: Store an issued verifiable credential
-    source_operation: openapi/terminal-3-openapi.yml#storeIssuerCredential
+- name: get_did
+  description: Get DID
+  source_operation: openapi/terminal-3-openapi.yml#getDid
+- name: register_did
+  description: Register a DID
+  source_operation: openapi/terminal-3-openapi.yml#registerDid
+- name: openidc_authorize
+  description: OpenID Connect authorization endpoint
+  source_operation: openapi/terminal-3-openapi.yml#openidcAuthorize
+- name: get_openidc_credentials
+  description: Get OpenID Connect credentials
+  source_operation: openapi/terminal-3-openapi.yml#getOpenidcCredentials
+- name: create_openidc_credentials_proof
+  description: Create a proof for OpenID Connect credentials
+  source_operation: openapi/terminal-3-openapi.yml#createOpenidcCredentialsProof
+- name: create_openidc_token
+  description: OpenID Connect token endpoint (v1)
+  source_operation: openapi/terminal-3-openapi.yml#createOpenidcToken
+- name: get_openidc_user
+  description: OpenID Connect userinfo endpoint (v1)
+  source_operation: openapi/terminal-3-openapi.yml#getOpenidcUser
+- name: get_openidc_user_social_connections
+  description: Get a user's social connections
+  source_operation: openapi/terminal-3-openapi.yml#getOpenidcUserSocialConnections
+- name: create_openidc_token_v2
+  description: OpenID Connect token endpoint (v2)
+  source_operation: openapi/terminal-3-openapi.yml#createOpenidcTokenV2
+- name: get_openidc_user_v2
+  description: OpenID Connect userinfo endpoint (v2)
+  source_operation: openapi/terminal-3-openapi.yml#getOpenidcUserV2
+- name: list_sub_clients
+  description: List sub-clients
+  source_operation: openapi/terminal-3-openapi.yml#listSubClients
+- name: get_sub_client
+  description: Get a sub-client
+  source_operation: openapi/terminal-3-openapi.yml#getSubClient
+- name: create_sub_client
+  description: Create a sub-client
+  source_operation: openapi/terminal-3-openapi.yml#createSubClient
+- name: update_sub_client
+  description: Update a sub-client
+  source_operation: openapi/terminal-3-openapi.yml#updateSubClient
+- name: delete_sub_client
+  description: Delete a sub-client
+  source_operation: openapi/terminal-3-openapi.yml#deleteSubClient
+- name: create_transactional_email_template
+  description: Create a transactional email template
+  source_operation: openapi/terminal-3-openapi.yml#createTransactionalEmailTemplate
+- name: send_transactional_email
+  description: Send a transactional email
+  source_operation: openapi/terminal-3-openapi.yml#sendTransactionalEmail
+- name: update_transactional_email_template
+  description: Update a transactional email template
+  source_operation: openapi/terminal-3-openapi.yml#updateTransactionalEmailTemplate
+- name: create_user
+  description: Create a user (requires x-api-token)
+  source_operation: openapi/terminal-3-openapi.yml#createUser
+- name: get_user_social_data
+  description: Get a user's social data
+  source_operation: openapi/terminal-3-openapi.yml#getUserSocialData
+- name: get_user_wallet_addresses
+  description: Get a user's wallet addresses
+  source_operation: openapi/terminal-3-openapi.yml#getUserWalletAddresses
+- name: get_issuer_credentials
+  description: Get issuer credentials
+  source_operation: openapi/terminal-3-openapi.yml#getIssuerCredentials
+- name: create_issuer_credentials_proof
+  description: Create a proof for issuer credentials
+  source_operation: openapi/terminal-3-openapi.yml#createIssuerCredentialsProof
+- name: store_issuer_credential
+  description: Store an issued verifiable credential
+  source_operation: openapi/terminal-3-openapi.yml#storeIssuerCredential
+deployment:
+  mode: none
+  verified: derived
+  tools: 24
+  checked: '2026-08-12'
+  source: catalog MCP census

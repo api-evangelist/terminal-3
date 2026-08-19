@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Terminal 3 DID V1 Transactional Email Template V1 API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Transactional Email Template V1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a transactional email template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://staging.terminal3.io/v1/transactional_email_template"
+          },
+          "docs": "Create a transactional email template"
+        },
+        {
+          "info": {
+            "name": "Send a transactional email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://staging.terminal3.io/v1/transactional_email_template/send"
+          },
+          "docs": "Send a transactional email"
+        },
+        {
+          "info": {
+            "name": "Update a transactional email template",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://staging.terminal3.io/v1/transactional_email_template/:transactional_email_template_id",
+            "params": [
+              {
+                "name": "transactional_email_template_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a transactional email template"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
