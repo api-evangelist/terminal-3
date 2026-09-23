@@ -1,8 +1,8 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Terminal 3 DID V1 OpenID Connect V1 API
+  title: Terminal 3 OpenID Connect V1 API
   version: '1.0'
-  description: Terminal 3 (T3) REST API for decentralized identity, verifiable credentials, OpenID Connect, sub-client management, transactional email, and user data. Reconstructed from Terminal 3's own published SDK & API Reference (https://docs.terminal3.io/developers/adk/reference), which enumerates every path, method, and tag as verified against the provider's terminal-3-openapi.yml (21 paths, 24 operations, OpenAPI 3.0.3). Request/response body schemas are not reproduced here because the raw spec file is served only through the Mintlify viewer and returns 404 as a downloadable document; this capture is structural (paths, methods, operationIds, tags, security, server) and carries no fabricated field-level schemas. Verify field shapes against the live API Reference.
+  description: Terminal 3 (T3) REST API for decentralized identity, verifiable credentials, OpenID Connect, sub-client management, transactional email, and user data.
   x-provenance:
     method: generated
     source: https://docs.terminal3.io/developers/adk/reference
@@ -85,10 +85,10 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   responses:
-    BadRequest:
-      description: The request was malformed.
     Unauthorized:
       description: Authentication is missing or invalid.
+    BadRequest:
+      description: The request was malformed.
   securitySchemes:
     bearerAuth:
       type: http
