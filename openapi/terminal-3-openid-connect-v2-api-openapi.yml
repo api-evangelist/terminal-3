@@ -41,10 +41,10 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   responses:
-    Unauthorized:
-      description: Authentication is missing or invalid.
     BadRequest:
       description: The request was malformed.
+    Unauthorized:
+      description: Authentication is missing or invalid.
   securitySchemes:
     bearerAuth:
       type: http

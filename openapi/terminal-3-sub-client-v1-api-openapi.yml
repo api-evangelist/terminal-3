@@ -77,10 +77,10 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
-    Unauthorized:
-      description: Authentication is missing or invalid.
     NotFound:
       description: The requested resource was not found.
+    Unauthorized:
+      description: Authentication is missing or invalid.
   securitySchemes:
     bearerAuth:
       type: http
